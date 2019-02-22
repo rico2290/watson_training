@@ -1,0 +1,10 @@
+lemma,poscode,surface
+TRF,3,Tribunal REgional Federal
+TRT,3,Tribunal Regional do Trabalho
+TST,3,Tribunal Superior do Trabalho
+STF,3,Supremo Tribunal Federal
+STJ,3,Supremo Tribunal de Justiça
+TJ,3,Tribunal de Justiça
+
+
+
