@@ -1,5 +1,5 @@
 import json
-import PyPDF2
+import PyPDF2, re
 from pprint import pprint
 from watson_developer_cloud import NaturalLanguageUnderstandingV1 as NLU 
 from watson_developer_cloud.natural_language_understanding_v1  \
@@ -26,10 +26,11 @@ for x in range(ler_pdf.getNumPages()):
 #decisao = 'C:\Users\102869\Downloads\STJ_EDC.pdf',
 
 nlu = NLU(version=version,iam_apikey=apikey,url=url)
-url_jusBrasil = 'https://www.jusbrasil.com.br/jurisprudencia/busca?q=fornecimento+de+medicamentos&idtopico=T10000001&idtopico=T10000002&idtopico=T10000007'
+url_jusBrasil = 'https://tj-sp.jusbrasil.com.br/jurisprudencia/436868694/agravo-de-instrumento-ai-22393797120168260000-sp-2239379-7120168260000/inteiro-teor-436868714?ref=juris-tabs'
 
 res = nlu.analyze(
-    url=url_jusBrasil,
+    url = url_jusBrasil,
+    #text=conteudo,
     features=Features(relations=RelationsOptions(model=model_id),
     sentiment=SentimentOptions(targets=['negar provimento']),
     entities=EntitiesOptions(model=model_id))).get_result()
