@@ -1,14 +1,403 @@
 {
  "usage": {
   "text_units": 1,
-  "text_characters": 4978,
-  "features": 2
+  "text_characters": 3128,
+  "features": 3
  },
- "retrieved_url": "https://tj-sp.jusbrasil.com.br/jurisprudencia/436868694/agravo-de-instrumento-ai-22393797120168260000-sp-2239379-7120168260000/inteiro-teor-436868714?ref=juris-tabs",
- "relations": [],
+ "sentiment": {
+  "targets": [
+   {
+    "text": "negar provimento",
+    "score": 0,
+    "label": "neutral"
+   }
+  ],
+  "document": {
+   "score": 0,
+   "label": "neutral"
+  }
+ },
+ "relations": [
+  {
+   "type": "TurmaPertenceInstancia",
+   "sentence": "Encontrado em:  Vistos e relatados estes autos em que são  partes a s acima indicadas, decide a 3ª Turma do Tribunal Federal da 4ª Região, por  unanimidade, negar provimento ao apelo da União e dar parcial provimento à apelação  do Estado do Paraná e à remessa oficial, nos termos do relatório, votos e notas  taquigráficas que",
+   "score": 0.999084,
+   "arguments": [
+    {
+     "text": "3ª Turma",
+     "location": [
+      1233,
+      1241
+     ],
+     "entities": [
+      {
+       "type": "TURMA",
+       "text": "3ª Turma",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "text": "Tribunal Federal da 4ª Região",
+     "location": [
+      1245,
+      1274
+     ],
+     "entities": [
+      {
+       "type": "INSTANCIA",
+       "text": "Tribunal Federal da 4ª Região",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "AcordaoJulgadoEm",
+   "sentence": "Encontrado em:  Vistos e relatados estes autos em que são  partes a s acima indicadas, decide a 3ª Turma do Tribunal Federal da 4ª Região, por  unanimidade, negar provimento ao apelo da União e dar parcial provimento à apelação  do Estado do Paraná e à remessa oficial, nos termos do relatório, votos e notas  taquigráficas que",
+   "score": 0.998803,
+   "arguments": [
+    {
+     "text": "negar provimento ao apelo da União",
+     "location": [
+      1294,
+      1328
+     ],
+     "entities": [
+      {
+       "type": "ACORDAO",
+       "text": "negar provimento ao apelo da União",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "text": "Tribunal Federal da 4ª Região",
+     "location": [
+      1245,
+      1274
+     ],
+     "entities": [
+      {
+       "type": "INSTANCIA",
+       "text": "Tribunal Federal da 4ª Região",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "AcordaoJulgadoEm",
+   "sentence": "Encontrado em:  Vistos e relatados estes autos em que são  partes a s acima indicadas, decide a 3ª Turma do Tribunal Federal da 4ª Região, por  unanimidade, negar provimento ao apelo da União e dar parcial provimento à apelação  do Estado do Paraná e à remessa oficial, nos termos do relatório, votos e notas  taquigráficas que",
+   "score": 0.986285,
+   "arguments": [
+    {
+     "text": "dar parcial provimento à apelação \ndo Estado do Paraná",
+     "location": [
+      1331,
+      1385
+     ],
+     "entities": [
+      {
+       "type": "ACORDAO",
+       "text": "dar parcial provimento à apelação \ndo Estado do Paraná",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "text": "Tribunal Federal da 4ª Região",
+     "location": [
+      1245,
+      1274
+     ],
+     "entities": [
+      {
+       "type": "INSTANCIA",
+       "text": "Tribunal Federal da 4ª Região",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "ProcessoUF",
+   "sentence": "TERCEIRA  TURMA APELAÇÃO/REEXAME NECESSÁRIO APELREEX  50099542820134047001 PR 5009954 - 28.2013.404.7001 (TRF - 4) NICOLAU KONKEL  JÚNIOR",
+   "score": 0.964653,
+   "arguments": [
+    {
+     "text": "TRF",
+     "location": [
+      1625,
+      1628
+     ],
+     "entities": [
+      {
+       "type": "INSTANCIA",
+       "text": "TRF",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "text": "PR",
+     "location": [
+      1594,
+      1596
+     ],
+     "entities": [
+      {
+       "type": "UF",
+       "text": "PR",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "TurmaPertenceInstancia",
+   "sentence": "Encontrado em:  Vistos e relatados estes autos em que são partes as acima indicadas,  decide a 3ª Turma do Tribunal Federal da 4ª Região, por unanimidade, negar provimento  à apelação, nos termos do  relatório, votos e notas taquigráficas que ficam fazendo parte  integrante do presente julgado.",
+   "score": 0.999084,
+   "arguments": [
+    {
+     "text": "3ª Turma",
+     "location": [
+      2801,
+      2809
+     ],
+     "entities": [
+      {
+       "type": "TURMA",
+       "text": "3ª Turma",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "text": "Tribunal Federal da 4ª Região",
+     "location": [
+      2813,
+      2842
+     ],
+     "entities": [
+      {
+       "type": "INSTANCIA",
+       "text": "Tribunal Federal da 4ª Região",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "AcordaoJulgadoEm",
+   "sentence": "Encontrado em:  Vistos e relatados estes autos em que são partes as acima indicadas,  decide a 3ª Turma do Tribunal Federal da 4ª Região, por unanimidade, negar provimento  à apelação, nos termos do  relatório, votos e notas taquigráficas que ficam fazendo parte  integrante do presente julgado.",
+   "score": 0.999349,
+   "arguments": [
+    {
+     "text": "negar provimento \nà apelação",
+     "location": [
+      2861,
+      2889
+     ],
+     "entities": [
+      {
+       "type": "ACORDAO",
+       "text": "negar provimento \nà apelação",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "text": "Tribunal Federal da 4ª Região",
+     "location": [
+      2813,
+      2842
+     ],
+     "entities": [
+      {
+       "type": "INSTANCIA",
+       "text": "Tribunal Federal da 4ª Região",
+       "disambiguation": {
+        "subtype": [
+         "NONE"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ],
  "language": "pt",
- "entities": [],
- "warnings": [
-  "sentiment: target(s) not found"
+ "entities": [
+  {
+   "type": "TURMA",
+   "text": "3ª Turma",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "INSTANCIA",
+   "text": "Tribunal Federal da 4ª Região",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "INSTANCIA",
+   "text": "Tribunal Federal da 4ª Região",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "ACORDAO",
+   "text": "negar provimento \nà apelação",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "ACORDAO",
+   "text": "negar provimento ao apelo da União",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "ACORDAO",
+   "text": "dar parcial provimento à apelação \ndo Estado do Paraná",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "NUMPROCESS",
+   "text": "50099542820134047001",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "UF",
+   "text": "PR",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "NUMPROCESS",
+   "text": "5009954\n-\n28.2013.404.7001",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "INSTANCIA",
+   "text": "TRF",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "EMENTA",
+   "text": "FORNECIMENTO",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  },
+  {
+   "type": "TURMA",
+   "text": "3ª Turma",
+   "disambiguation": {
+    "subtype": [
+     "NONE"
+    ]
+   },
+   "count": 1
+  }
  ]
 }
