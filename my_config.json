@@ -1,0 +1,119 @@
+{
+  "configuration_id" : "66518b23-e422-4883-b9f3-dcdd0a404210",
+  "name" : "Discovery-pmenos Config",
+  "created" : "2019-02-18T17:49:14.281Z",
+  "updated" : "2019-02-25T16:36:29.520Z",
+  "description" : "",
+  "conversions" : {
+    "html" : {
+      "exclude_content" : {
+        "xpaths" : [ ]
+      },
+      "exclude_tag_attributes" : [ "EVENT_ACTIONS" ],
+      "exclude_tags_completely" : [ "script", "sup" ],
+      "exclude_tags_keep_content" : [ "font", "em", "span" ],
+      "keep_content" : {
+        "xpaths" : [ ]
+      }
+    },
+    "json_normalizations" : [ ],
+    "pdf" : {
+      "heading" : {
+        "fonts" : [ {
+          "level" : 1,
+          "max_size" : 80,
+          "min_size" : 24
+        }, {
+          "bold" : false,
+          "italic" : false,
+          "level" : 2,
+          "max_size" : 24,
+          "min_size" : 18
+        }, {
+          "bold" : true,
+          "level" : 2,
+          "max_size" : 24,
+          "min_size" : 18
+        }, {
+          "bold" : false,
+          "italic" : false,
+          "level" : 3,
+          "max_size" : 18,
+          "min_size" : 13
+        }, {
+          "bold" : true,
+          "level" : 3,
+          "max_size" : 18,
+          "min_size" : 13
+        }, {
+          "bold" : false,
+          "italic" : false,
+          "level" : 4,
+          "max_size" : 13,
+          "min_size" : 11
+        } ]
+      }
+    },
+    "segment" : {
+      "annotated_fields" : [ ],
+      "enabled" : false
+    },
+    "word" : {
+      "heading" : {
+        "fonts" : [ {
+          "bold" : false,
+          "italic" : false,
+          "level" : 1,
+          "min_size" : 24
+        }, {
+          "bold" : true,
+          "italic" : false,
+          "level" : 2,
+          "max_size" : 23,
+          "min_size" : 18
+        }, {
+          "bold" : false,
+          "italic" : false,
+          "level" : 3,
+          "max_size" : 17,
+          "min_size" : 14
+        }, {
+          "bold" : true,
+          "italic" : false,
+          "level" : 4,
+          "max_size" : 13,
+          "min_size" : 13
+        } ],
+        "styles" : [ {
+          "level" : 1,
+          "names" : [ "pullout heading", "pulloutheading", "header" ]
+        }, {
+          "level" : 2,
+          "names" : [ "subtitle" ]
+        } ]
+      }
+    }
+  },
+  "enrichments" : [ {
+    "destination_field" : "enriched_text",
+    "enrichment" : "natural_language_understanding",
+    "options" : {
+      "features" : {
+        "categories" : { },
+        "concepts" : {
+          "limit" : 8
+        },
+        "entities" : {
+          "emotion" : false,
+          "limit" : 50,
+          "sentiment" : true
+        }
+      }
+    },
+    "source_field" : "text"
+  } ],
+  "normalizations" : [ {
+    "operation" : "remove",
+    "source_field" : "image"
+  } ]
+}

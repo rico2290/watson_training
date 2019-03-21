@@ -23,13 +23,9 @@ def _return_nlu_credentials_(data_return):
 
 #Chamando a função que retorna credencial de autenticação
 url, version, apikey, model_id = _return_nlu_credentials_(data_return)
+print(model_id)
 
 natural_language = NLU(version=version,iam_apikey=apikey,url=url)
-'''
-doc= 'adminCult'
-pdf_file = doc +.'{}'.format('pdf')
-print(pdf_file)
-'''
 
 def _ler_pdf_file(ler_pdf):
     pdf_file = ler_pdf
@@ -66,3 +62,9 @@ with open('body_request.json','w',encoding='utf-8') as file:
     #ler = json_encode(ler, JSON_UNESCAPED_UNIOCODE)
     file.write(ler)
 
+'''
+response = natural_language.delete_model(
+    model_id='model_id').get_result()
+
+print(json.dumps(response, indent=2))
+'''

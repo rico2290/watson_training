@@ -19,6 +19,7 @@ else:
     print('Não Encontrado!!!')
 
 '''
+Algumas sntaxes para compreensão da expressão regular em python 
 (.*) -> zero ou mais ocorrencias precedido da expressão
 (.*?) -> zero ou uma ocorencia precedido da expressão
 '''
