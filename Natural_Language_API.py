@@ -1,5 +1,5 @@
 import json
-import PyPDF2, re
+import PyPDF2
 from pprint import pprint
 from watson_developer_cloud import NaturalLanguageUnderstandingV1 as NLU 
 from watson_developer_cloud.natural_language_understanding_v1  \
@@ -10,11 +10,14 @@ def _ler_json_file(ler_json):
     with open(ler_json, 'r') as file:
         data = json.load(file)
         return data
-        print(data)
-#(json.dumps(data, indent=2))print
+  
+
 
 data_return = _ler_json_file('credentials.json')
+print(json.dumps(data_return, indent=2) )
 
+
+#retorna credencial de autenticação
 def _return_nlu_credentials_(data_return):
     return data_return['credentials']['url'],\
         data_return['credentials']['version'],\
@@ -23,7 +26,7 @@ def _return_nlu_credentials_(data_return):
 
 #Chamando a função que retorna credencial de autenticação
 url, version, apikey, model_id = _return_nlu_credentials_(data_return)
-print(model_id)
+
 
 natural_language = NLU(version=version,iam_apikey=apikey,url=url)
 
@@ -38,7 +41,8 @@ def _ler_pdf_file(ler_pdf):
     return conteudo
 
 # Chamando a função para extrair de pdf para txt
-pdf_file = _ler_pdf_file('Decisao_Judicial_Med.pdf')
+_pdf_file_ = 'Decisao_Judicial_Med.pdf'
+pdf_file = _ler_pdf_file(_pdf_file_)
   
 
 
@@ -59,12 +63,4 @@ natural_language_return = _return_natural_language_information_from_document_or_
 
 with open('body_request.json','w',encoding='utf-8') as file:
     ler = json.dumps(natural_language_return,ensure_ascii=False,indent=1)
-    #ler = json_encode(ler, JSON_UNESCAPED_UNIOCODE)
     file.write(ler)
-
-'''
-response = natural_language.delete_model(
-    model_id='model_id').get_result()
-
-print(json.dumps(response, indent=2))
-'''
