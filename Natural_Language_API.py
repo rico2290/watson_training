@@ -1,66 +1,51 @@
 import json
 import PyPDF2
-from pprint import pprint
+import os, errno
+#import time
+
+#from pprint import pprint
 from watson_developer_cloud import NaturalLanguageUnderstandingV1 as NLU 
-from watson_developer_cloud.natural_language_understanding_v1  \
-    import Features, RelationsOptions,EntitiesOptions,MetadataOptions,RelationEntity, SentimentOptions
-
-def _ler_json_file(ler_json):
-    data = []
-    with open(ler_json, 'r') as file:
-        data = json.load(file)
-        return data
-  
+import Modulo_Read_File, Modulo_N_L_U_Information as NLUM, Limita_tamanho_em_binario as Limitador
 
 
-data_return = _ler_json_file('credentials.json')
-print(json.dumps(data_return, indent=2) )
+numero_binario_tranformado = Limitador.transforma_hora_em_binario()
 
+numero_tranformado = Limitador.tranforma(numero_binario_tranformado)
+print(numero_tranformado)
+#extraindo dados do arquivo json
+data_return = Modulo_Read_File._ler_json_file('credentials.json')
+#print(json.dumps(data_return, indent=2))
 
 #retorna credencial de autenticação
-def _return_nlu_credentials_(data_return):
-    return data_return['credentials']['url'],\
-        data_return['credentials']['version'],\
-            data_return['credentials']['apikey'],\
-                data_return['credentials']['model_id']
-
-#Chamando a função que retorna credencial de autenticação
-url, version, apikey, model_id = _return_nlu_credentials_(data_return)
+url, version, apikey, model_id = Modulo_Read_File._return_nlu_credentials_(data_return)
 
 
 natural_language = NLU(version=version,iam_apikey=apikey,url=url)
 
-def _ler_pdf_file(ler_pdf):
-    pdf_file = ler_pdf
-    ler_pdf = PyPDF2.PdfFileReader(pdf_file)
-    conteudo = ''
-    for x in range(ler_pdf.getNumPages()):
-            pagina = ler_pdf.getPage(x)
-            #print("Página Numero: {}".format(str(1+ler_pdf.getPageNumber(pagina))))
-            conteudo = pagina.extractText()
-    return conteudo
 
-# Chamando a função para extrair de pdf para txt
-_pdf_file_ = 'Decisao_Judicial_Med.pdf'
-pdf_file = _ler_pdf_file(_pdf_file_)
-  
+# extrair de pdf para txt
+pdf_file = 'Decisao_Judicial_Med.pdf'
+return_pdf_file = Modulo_Read_File._ler_pdf_file(pdf_file)
 
 
-def _return_natural_language_information_from_document_or_url_(NLU ,document=None, url=None, model=None):
-    result = NLU.analyze(
-        text=document,
-        features=Features(
-            relations=RelationsOptions(model=model_id),\
-            sentiment=SentimentOptions(targets=['Transitado em julgado', 'negar provimento']),
-            entities=EntitiesOptions(model=model_id))
-        ).get_result()
-    return result
+# retornar (relacionamento, entidades e por cima mapear o sentimento[Transitado em Julgado])
+return_natural_language_understanding = NLUM.extract_natural_language_understanding_information_form_url_or_document(
+    NLU=natural_language,document= return_pdf_file, model=model_id, target1='Transitado em julgado', target2='negar provimento')
+#print(type(return_natural_language_understanding))
 
-#Chamando a função para retornar (relacionamento, entidades e por cima mapear o sentimento[Transitado em Julgado])
-natural_language_return = _return_natural_language_information_from_document_or_url_(natural_language,pdf_file,model_id)
 
-#print(json.dumps(res, indent=2))
 
-with open('body_request.json','w',encoding='utf-8') as file:
-    ler = json.dumps(natural_language_return,ensure_ascii=False,indent=1)
+file_name = 'result/body_request{}.json'.format(numero_tranformado)
+if not os.path.exists(os.path.dirname(file_name)):
+    try:
+        os.makedirs(os.path.dirname(file_name))
+        print("Pasta e arquivo criado")
+    except OSError as exc: 
+        if exc.errno != errno.EEXIST:
+            raise
+
+# file_name = '/result/body_request.json'
+# os.makedirs(os.path.dirname(file_name), exist_ok=True)
+with open(file_name,'w',encoding='utf-8') as file:
+    ler = json.dumps(return_natural_language_understanding,ensure_ascii=False,indent=1)
     file.write(ler)
