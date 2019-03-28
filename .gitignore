@@ -8,5 +8,6 @@
 !.gitignore
 !my_config.json
 !.pdf
-!result/.json
-!stopwords/.txt
+!/result/
+!/stopwords/
+!/_pycache_/
