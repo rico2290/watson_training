@@ -1,13 +1,15 @@
 
 #Ignorar Tudo
 /*
+
 #Não ignorar esses abaixo
 !body_request.json
 !Entity_Updated.json
-!.py
+!*.py
 !.gitignore
 !my_config.json
 !.pdf
 !/result/
 !/stopwords/
+!/modulos/
 
