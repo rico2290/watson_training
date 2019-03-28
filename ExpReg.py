@@ -1,4 +1,4 @@
-import re
+import re, os
 
 
 texto = ' Vistos, relatados e discutidos estes autos de Apelação / Remessa Necessária nº 1009666-43.2015.8.26.0079, da Comarca de Botucatu, em que é apelante/apelado PEDRO ADILSON MULOTTO (JUSTIÇA GRATUITA), é apelado/apelante PREFEITURA MUNICIPAL DE BOTUCATU.'
@@ -18,8 +18,8 @@ if obj:
 else:
     print('Não Encontrado!!!')
 
-'''
-Algumas sntaxes para compreensão da expressão regular em python 
-(.*) -> zero ou mais ocorrencias precedido da expressão
-(.*?) -> zero ou uma ocorencia precedido da expressão
-'''
+
+# Algumas sntaxes para compreensão da expressão regular em python 
+# (.*) -> zero ou mais ocorrencias precedido da expressão
+# (.*?) -> zero ou uma ocorencia precedido da expressão
+

@@ -1,0 +1,12 @@
+
+#Ignorar Tudo
+/*
+#Não ignorar esses abaixo
+!body_request.json
+!Entity_Updated.json
+!.py
+!.gitignore
+!my_config.json
+!.pdf
+!result/.json
+!stopwords/.txt
