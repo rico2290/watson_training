@@ -26,3 +26,11 @@ def _return_nlu_credentials_(data_return):
         data_return['credentials']['version'],\
             data_return['credentials']['apikey'],\
                 data_return['credentials']['model_id']
+
+def _return_discovery_credentials_(data_return):
+    return data_return['credentials']['url'],\
+        data_return['credentials']['version'],\
+            data_return['credentials']['apikey'],\
+                data_return['credentials']['environment_id'],\
+                        data_return['credentials']['configuration_id'],\
+                                data_return['credentials']['collecttion_id']

@@ -1,0 +1,11 @@
+{
+  "name": "mp3towav",
+  "version": "1.0.0",
+  "description": "conversao de mp3 para wav",
+  "main": "mp3_to_wav.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rico22@",
+  "license": "ISC"
+}
