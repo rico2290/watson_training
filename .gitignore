@@ -1,7 +1,7 @@
 
 #Ignorar Tudo
 /*
-
+*.mp3
 #Não ignorar esses abaixo
 !body_request.json
 !Entity_Updated.json
