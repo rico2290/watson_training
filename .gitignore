@@ -1,7 +1,9 @@
-
+﻿
 #Ignorar Tudo
 /*
-*.mp3
+**/node_modules/
+**/Others/retorno.txt
+
 #Não ignorar esses abaixo
 !body_request.json
 !Entity_Updated.json
