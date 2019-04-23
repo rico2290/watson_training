@@ -16,21 +16,21 @@ const parametros = {
     word_alternatives_threshold: 0.9
 }
 function fala(speech2Text,parametros){
-    var imprimir;
+    //var imprimir;
     speech2Text.recognize(parametros, function(err, res){
-        var imprimir1;
+        //var imprimir1;
         if(err){
             console.log(err)
         }else{
-            imprimir1 = (res.results[0].alternatives[0].transcript)
+            //imprimir1 = (res.results[0].alternatives[0].transcript)
             imprimir = (res.results[0].alternatives[0].transcript)
-            console.log(imprimir1)
+            console.log((res.results[0].alternatives[0].transcript))
 
             fs.writeFile('conversao.txt',imprimir, (err)=>{
                 if(err) throw err;
 
             })
-            console.log(imprimir)
+            //console.log(imprimir)
             
                 
         }

@@ -2,9 +2,9 @@ import Modulo_mp3_to_wav as MMP3WAVE
 import Modulo_Speech_to_Text as MST, json
 
 name = "AUDIO.mp3"
-output = "AUDIOCONVERTED1.wav"
+output = "converted.wav"
 
-MMP3WAVE.convert_mp3_to_wav(name,output)
+#MMP3WAVE.convert_mp3_to_wav(name,output)
 
 retorno_audio_to_text = MST.context_speech_to_text(output)
 retorno_audio_to_text = retorno_audio_to_text.replace('"','')
