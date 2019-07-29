@@ -14,11 +14,13 @@ def _ler_pdf_file(ler_pdf):
     ler_pdf = PyPDF2.PdfFileReader(pdf_file)
     conteudo = ''
     for x in range(ler_pdf.getNumPages()):
-            pagina = ler_pdf.getPage(x)
-            #print("Página Numero: {}".format(str(1+ler_pdf.getPageNumber(pagina))))
-            conteudo = pagina.extractText()
-    return conteudo
-
+        pagina = ler_pdf.getPage(x)
+        #print("Página Numero: {}".format(str(1+ler_pdf.getPageNumber(pagina))))
+        conteudo = pagina.extractText()
+        
+        with open('pdf_to2_txt.txt', 'a+', encoding='utf-8') as arquivo:
+                arquivo.write(conteudo)
+_ler_pdf_file('caminhoDoArquivo')
 
 #retorna credencial de autenticação
 def _return_nlu_credentials_(data_return):
