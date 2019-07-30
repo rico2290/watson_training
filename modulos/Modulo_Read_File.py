@@ -17,6 +17,7 @@ def _ler_pdf_file(ler_pdf):
         pagina = ler_pdf.getPage(x)
         #print("Página Numero: {}".format(str(1+ler_pdf.getPageNumber(pagina))))
         conteudo = pagina.extractText()
+        print(conteudo.encode('utf-8'))
         
         with open('pdf_to2_txt.txt', 'a+', encoding='utf-8') as arquivo:
                 arquivo.write(conteudo)
